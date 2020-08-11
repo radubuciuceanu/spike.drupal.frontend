@@ -5,7 +5,5 @@
  */
 
 module.exports = {
-  plugins: [
-    "gatsby-plugin-root-import"
-  ],
+  plugins: ['gatsby-plugin-root-import'],
 }
