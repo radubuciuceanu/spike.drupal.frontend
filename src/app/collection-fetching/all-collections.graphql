@@ -1,0 +1,53 @@
+{
+    nodeQuery(filter: {conditions: [{field: "type", value: "collection", operator: EQUAL}, {field: "field_is_root", value: "1", operator: EQUAL}]}) {
+        entities {
+            entityBundle
+            ... on NodeCollection {
+                ...commonCollectionFields
+                queryFieldReferences {
+                    entities {
+                        entityBundle
+                        ... on NodeCollection {
+                            ...commonCollectionFields
+                            queryFieldReferences {
+                                entities {
+                                    entityBundle
+                                    ... on NodeCollection {
+                                        ...commonCollectionFields
+                                        queryFieldReferences {
+                                            entities {
+                                                ... on NodeEpisode {
+                                                    ...commonEpisodeFields
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        ... on NodeMovie {
+                            title
+                            fieldShortDescription
+                            fieldDescription
+                        }
+                        ... on NodeEpisode {
+                            ...commonEpisodeFields
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+fragment commonCollectionFields on NodeCollection {
+    title
+    fieldShortDescription
+    fieldDescription
+}
+
+fragment commonEpisodeFields on NodeEpisode {
+    title
+    fieldShortDescription
+    fieldDescription
+}
