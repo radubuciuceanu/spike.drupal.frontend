@@ -1,12 +1,13 @@
 {
   "extends": [
+    "standard",
     "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended"
+    "plugin:react/recommended"
   ],
   "plugins": [
     "react",
-    "react-hooks"
+    "react-hooks",
+    "import"
   ],
   "settings": {
     "react": {
@@ -24,6 +25,10 @@
     "jest": true
   },
   "rules": {
+    "implicit-arrow-linebreak": [
+      "error",
+      "beside"
+    ],
     "react/jsx-indent-props": [
       "error",
       "first"
