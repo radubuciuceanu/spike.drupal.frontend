@@ -8,3 +8,7 @@ export const fetch = {
 export const display = {
   innerCollection: 'DISPLAY.INNER.COLLECTION'
 }
+
+export const hide = {
+  innerCollection: 'HIDE.INNER.COLLECTION'
+}

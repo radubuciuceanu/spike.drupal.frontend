@@ -1,4 +1,4 @@
-import { fetch, display } from 'src/app/collection/actions/types'
+import { fetch, display, hide } from 'src/app/collection/actions/types'
 
 export const rootCollections = () => ({
   type: fetch.rootCollections
@@ -12,4 +12,8 @@ export const rootCollectionsFulfilled = payload => ({
 export const displayInnerCollection = payload => ({
   type: display.innerCollection,
   payload
+})
+
+export const hideInnerCollection = () => ({
+  type: hide.innerCollection
 })
