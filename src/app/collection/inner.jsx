@@ -9,14 +9,14 @@ import { Item } from 'src/app/item'
 export const InnerCollection = ({ value }) => {
   const innerCollection = useSelector(root => root.collection.inner.toJS())
 
-  return <div hidden={innerCollection.value === null}>
+  return <div hidden={innerCollection.title !== value.title}>
     <GridList cellHeight={20} style={{ overflow: 'hidden' }}>
       <GridListTile cols={3} style={{ height: 'auto' }}>
-        <CollectionTitle value={value}/>
+        <CollectionTitle value={innerCollection?.value ?? {}}/>
       </GridListTile>
 
       {
-        value.queryFieldReferences.entities.map((reference, index) => <Item key={index} value={reference}/>)
+        innerCollection?.entities?.map((reference, index) => <Item key={index} value={reference}/>)
       }
     </GridList>
   </div>
