@@ -4,11 +4,11 @@ import { Season } from 'src/app/season-common'
 
 export const makeReference = ({ entityBundle }) => {
   if (entityBundle === 'collection') {
-    return Collection
+    // return Collection
   }
 
   if (entityBundle === 'show') {
-    return Collection
+    // return Collection
   }
 
   if (entityBundle === 'movie') {
