@@ -2,7 +2,7 @@ import { from } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { ApolloClient, InMemoryCache } from '@apollo/client'
 
-import allCollections from 'src/app/collection/fetching/all-collections.graphql'
+import allCollections from 'src/app/collection/repositories/all-collections.graphql'
 
 const URL = 'http://localhost:8080/graphql'
 
