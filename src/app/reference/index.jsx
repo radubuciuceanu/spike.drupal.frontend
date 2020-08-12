@@ -2,7 +2,7 @@ import React from 'react'
 import Box from '@material-ui/core/Box'
 import { makeStyles } from '@material-ui/styles'
 
-import { makeReference } from 'src/app/make-reference'
+import { Item } from 'src/app/item'
 
 const useReferenceStyles = makeStyles(theme => ({
   root: {
@@ -15,9 +15,8 @@ const useReferenceStyles = makeStyles(theme => ({
 
 export const Reference = ({ value }) => {
   const classes = useReferenceStyles()
-  const Component = makeReference(value)
 
   return <Box p={1} className={classes.root}>
-    {Component ? <Component value={value}/> : null}
+    <Item value={value}/>
   </Box>
 }
