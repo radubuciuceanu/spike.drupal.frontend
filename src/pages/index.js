@@ -1,31 +1,28 @@
-import React, { useEffect, useState } from 'react'
-import { tap } from 'rxjs/operators'
+import React, { useEffect } from 'react'
 import Grid from '@material-ui/core/Grid'
 import ThemeProvider from '@material-ui/styles/ThemeProvider'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { fetchCollections } from 'src/app/collection/fetching/repository'
 import { Collection } from 'src/app/collection'
 import { makeTheme } from 'src/pages/makeTheme'
+import { rootCollections } from 'src/app/collection/actions'
 
-const useRootCollections = () => {
-  const [collections, setCollections] = useState([])
+const useStartupActions = () => {
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    fetchCollections()
-      .pipe(tap(response => setCollections(response.nodeQuery.entities)))
-      .subscribe()
+    dispatch(rootCollections())
   }, [])
-
-  return collections
 }
 
 export default function Home() {
-  const rootCollections = useRootCollections()
+  useStartupActions()
+  const rootCollections = useSelector(root => root.collection.root.toJS().value)
 
   return <ThemeProvider theme={makeTheme()}>
     <Grid container justify={'center'} spacing={4}>
       {
-        rootCollections.map((collection, index) => <Collection key={index} value={collection}/>)
+        rootCollections.entities?.map((collection, index) => <Collection key={index} value={collection}/>)
       }
     </Grid>
   </ThemeProvider>
