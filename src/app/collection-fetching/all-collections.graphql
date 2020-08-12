@@ -26,9 +26,7 @@
                             }
                         }
                         ... on NodeMovie {
-                            title
-                            fieldShortDescription
-                            fieldDescription
+                            ...commonMovieFields
                         }
                         ... on NodeEpisode {
                             ...commonEpisodeFields
@@ -47,6 +45,12 @@ fragment commonCollectionFields on NodeCollection {
 }
 
 fragment commonEpisodeFields on NodeEpisode {
+    title
+    fieldShortDescription
+    fieldDescription
+}
+
+fragment commonMovieFields on NodeMovie {
     title
     fieldShortDescription
     fieldDescription

@@ -7,6 +7,7 @@ import allCollections from 'src/app/collection-fetching/all-collections.graphql'
 const URL = 'http://localhost:8080/graphql'
 
 const headers = () => ({
+  // eslint-disable-next-line no-undef
   Authorization: 'Basic ' + btoa('admin:admin')
 })
 
