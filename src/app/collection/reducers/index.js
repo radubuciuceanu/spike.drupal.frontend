@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
 
-import { fetch } from 'src/app/collection/reducers/fetch'
+import { all } from 'src/app/collection/reducers/all'
 
-export const collection = combineReducers({ fetch })
+export const collection = combineReducers({ all })
