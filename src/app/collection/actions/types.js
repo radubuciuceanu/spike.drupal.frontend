@@ -1,2 +1,6 @@
-export const ALL_COLLECTIONS = 'COLLECTION.ALL'
-export const ALL_COLLECTIONS_FULFILLED = 'COLLECTION.ALL.FULFILLED'
+export const fetch = {
+  rootCollections: 'FETCH.ROOT.COLLECTIONS',
+  fulfilled: {
+    rootCollections: 'FETCH.ROOT.COLLECTIONS.FULFILLED'
+  }
+}
