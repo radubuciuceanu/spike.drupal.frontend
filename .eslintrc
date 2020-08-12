@@ -29,6 +29,12 @@
       "error",
       "beside"
     ],
+    "react/prop-types": [
+      "error",
+      {
+        "skipUndeclared": true
+      }
+    ],
     "react/jsx-indent-props": [
       "error",
       "first"
