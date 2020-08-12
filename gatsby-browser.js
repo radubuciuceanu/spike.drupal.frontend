@@ -2,6 +2,9 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { applyMiddleware, createStore } from 'redux'
 import { createEpicMiddleware } from 'redux-observable'
+import ThemeProvider from '@material-ui/styles/ThemeProvider'
+
+import { makeTheme } from './make-theme'
 
 import 'src/styles/global.css'
 import { rootReducer } from 'src/app/root-reducer'
@@ -13,5 +16,9 @@ export const wrapRootElement = ({ element }) => {
 
   epicMiddleware.run(rootEpic)
 
-  return <Provider store={store}>{element}</Provider>
+  return <Provider store={store}>
+    <ThemeProvider theme={makeTheme()}>
+      {element}
+    </ThemeProvider>
+  </Provider>
 }
