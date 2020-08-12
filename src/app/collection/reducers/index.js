@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
 
-import { all } from 'src/app/collection/reducers/all'
+import { root } from 'src/app/collection/reducers/root'
 
-export const collection = combineReducers({ all })
+export const collection = combineReducers({ root })

@@ -5,7 +5,7 @@ const defaultState = fromJS({
   value: {}
 })
 
-export const all = (state = defaultState, action) => {
+export const root = (state = defaultState, action) => {
   if (action.type === ALL_COLLECTIONS_FULFILLED) {
     return state.merge({ value: action.payload })
   }
