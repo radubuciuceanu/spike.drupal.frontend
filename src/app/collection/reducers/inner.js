@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable'
-import { display } from 'src/app/collection/actions/types'
+import { display, hide } from 'src/app/collection/actions/types'
 
 const defaultState = fromJS({
   value: null
@@ -8,6 +8,10 @@ const defaultState = fromJS({
 export const inner = (state = defaultState, action) => {
   if (action.type === display.innerCollection) {
     return state.merge({ value: action.payload })
+  }
+
+  if (action.type === hide.innerCollection) {
+    return state.merge({ value: null })
   }
 
   return state
