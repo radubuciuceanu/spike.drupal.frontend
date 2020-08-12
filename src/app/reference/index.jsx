@@ -5,8 +5,8 @@ import Collapse from '@material-ui/core/Collapse'
 import Grid from '@material-ui/core/Grid'
 
 import { makeReference } from 'src/app/make-reference'
-import { Movie } from 'src/app/movie-common'
-import { Collection } from 'src/app/collection-common'
+import { Movie } from 'src/app/movie'
+import { Collection } from 'src/app/collection'
 
 const useReferenceStyles = makeStyles(theme => ({
   root: {

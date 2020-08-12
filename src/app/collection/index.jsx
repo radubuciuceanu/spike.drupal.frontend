@@ -5,7 +5,7 @@ import GridListTile from '@material-ui/core/GridListTile'
 import ListSubheader from '@material-ui/core/ListSubheader'
 import Typography from '@material-ui/core/Typography'
 
-import { Reference } from 'src/app/reference-common'
+import { Reference } from 'src/app/reference'
 
 const CollectionTitle = ({ value }) => <ListSubheader component="div">
   <Typography variant={'h6'}>{value.title}</Typography>

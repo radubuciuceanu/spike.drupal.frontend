@@ -1,5 +1,5 @@
-import { Movie } from 'src/app/movie-common'
-import { Season } from 'src/app/season-common'
+import { Movie } from 'src/app/movie'
+import { Season } from 'src/app/season'
 
 export const makeReference = ({ entityBundle }) => {
   if (entityBundle === 'movie') {
