@@ -2,7 +2,7 @@ import { Collection } from 'src/app/collection-common'
 import { Movie } from 'src/app/movie-common'
 import { Season } from 'src/app/season-common'
 
-export const useComponent = ({ entityBundle }) => {
+export const makeReference = ({ entityBundle }) => {
   if (entityBundle === 'collection') {
     return Collection
   }
