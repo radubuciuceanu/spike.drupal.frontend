@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { tap } from 'rxjs/operators'
 import Grid from '@material-ui/core/Grid'
 import ThemeProvider from '@material-ui/styles/ThemeProvider'
-import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
 
 import { fetchCollections } from 'src/app/collection-fetching/repository'
 import { Collection } from 'src/app/collection-common'
