@@ -2,7 +2,7 @@ import { from } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { ApolloClient, InMemoryCache } from '@apollo/client'
 
-import allCollections from 'src/app/collection/repositories/all-collections.graphql'
+import rootCollectionsQuery from 'src/app/collection/repositories/root-collections.graphql'
 
 const URL = 'http://localhost:8080/graphql'
 
@@ -17,5 +17,5 @@ const client = () => new ApolloClient({
   cache: new InMemoryCache()
 })
 
-export const fetchCollections = () => from(client().query({ query: allCollections }))
+export const rootCollections = () => from(client().query({ query: rootCollectionsQuery }))
   .pipe(map(response => response.data))
