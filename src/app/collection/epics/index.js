@@ -1,3 +1,5 @@
 import { combineEpics } from 'redux-observable'
 
-export const collection = combineEpics()
+import { all } from 'src/app/collection/epics/all'
+
+export const collection = combineEpics(all)
