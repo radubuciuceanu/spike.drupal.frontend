@@ -5,5 +5,5 @@
  */
 
 module.exports = {
-  plugins: ['gatsby-plugin-root-import', 'gatsby-plugin-graphql-loader'],
+  plugins: ['gatsby-plugin-root-import', 'gatsby-plugin-graphql-loader', 'gatsby-plugin-material-ui']
 }
