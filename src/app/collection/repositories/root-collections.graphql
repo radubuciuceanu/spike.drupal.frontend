@@ -19,6 +19,9 @@
                                                 ... on NodeEpisode {
                                                     ...commonEpisodeFields
                                                 }
+                                                ... on NodeCollection {
+                                                    ...commonCollectionFields
+                                                }
                                             }
                                         }
                                     }
