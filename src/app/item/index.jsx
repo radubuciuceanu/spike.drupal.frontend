@@ -4,7 +4,7 @@ import GridListTile from '@material-ui/core/GridListTile'
 import { makeStyles } from '@material-ui/styles'
 import Box from '@material-ui/core/Box'
 
-const useReferenceStyles = makeStyles(theme => ({
+const useItemStyles = makeStyles(theme => ({
   root: {
     '&:hover': {
       background: theme.palette.hover.main,
@@ -14,7 +14,7 @@ const useReferenceStyles = makeStyles(theme => ({
 }))
 
 export const Item = ({ value, onClick }) => {
-  const classes = useReferenceStyles()
+  const classes = useItemStyles()
 
   return <Box p={1} className={classes.root}>
     <GridListTile>
