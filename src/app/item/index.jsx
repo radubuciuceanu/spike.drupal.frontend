@@ -19,7 +19,7 @@ export const Item = ({ value, onClick }) => {
   return <Box p={1} className={classes.root}>
     <GridListTile>
 
-      <img src={value.fieldImage.url} alt={'Image...'} width={303}
+      <img src={value?.fieldImage?.url} alt={'Image...'} width={303}
            onClick={onClick}/>
 
       <GridListTileBar title={value.title} subtitle={value.fieldShortDescription}/>

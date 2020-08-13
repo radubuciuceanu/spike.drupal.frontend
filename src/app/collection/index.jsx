@@ -9,14 +9,14 @@ import { CollectionTitle } from 'src/app/collection/title'
 import { Item } from 'src/app/item'
 import { displayInnerCollection } from 'src/app/collection/actions'
 
-const useOnClickCallback = value => {
+const useOnClickCallback = () => {
   const dispatch = useDispatch()
 
-  return innerItem => dispatch(displayInnerCollection({ value: innerItem, parentTitle: value.title }))
+  return (innerItem, index) => dispatch(displayInnerCollection({ value: innerItem, parentIndex: index }))
 }
 
-export const Collection = ({ value }) => {
-  const onClick = useOnClickCallback(value)
+export const Collection = ({ index, value }) => {
+  const onClick = useOnClickCallback()
 
   return <Grid item xs={10} sm={10} md={10} lg={10}>
     <GridList cellHeight={20} style={{ overflow: 'hidden' }}>
@@ -26,13 +26,13 @@ export const Collection = ({ value }) => {
 
       {
         value.queryFieldReferences.entities
-          .map((item, index) => <Item key={index} value={item} onClick={_ => onClick(item)}/>)
+          .map((item, itemIndex) => <Item key={itemIndex} value={item} onClick={_ => onClick(item, index)}/>)
       }
     </GridList>
 
     <Grid item container justify={'center'}>
       <Grid item xs={11} sm={11} md={11} lg={11}>
-        <InnerCollection parent={value}/>
+        <InnerCollection index={index}/>
       </Grid>
     </Grid>
   </Grid>

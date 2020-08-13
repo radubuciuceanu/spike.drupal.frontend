@@ -19,7 +19,7 @@ export default function Home() {
 
   return <Grid container justify={'center'} spacing={4}>
     {
-      rootCollections.entities?.map((collection, index) => <Collection key={index} value={collection}/>)
+      rootCollections.entities?.map((collection, index) => <Collection key={index} index={index} value={collection}/>)
     }
   </Grid>
 }
