@@ -12,7 +12,7 @@ import { displayInnerCollection } from 'src/app/collection/actions'
 const useOnClickCallback = value => {
   const dispatch = useDispatch()
 
-  return innerItem => dispatch(displayInnerCollection({ value: innerItem, title: value.title }))
+  return innerItem => dispatch(displayInnerCollection({ value: innerItem, parentTitle: value.title }))
 }
 
 export const Collection = ({ value }) => {
@@ -30,6 +30,10 @@ export const Collection = ({ value }) => {
       }
     </GridList>
 
-    <InnerCollection value={value}/>
+    <Grid item container justify={'center'}>
+      <Grid item xs={11} sm={11} md={11} lg={11}>
+        <InnerCollection parent={value}/>
+      </Grid>
+    </Grid>
   </Grid>
 }

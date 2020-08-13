@@ -1,25 +1,18 @@
 import React from 'react'
-import GridListTile from '@material-ui/core/GridListTile'
-import GridList from '@material-ui/core/GridList'
 import Collapse from '@material-ui/core/Collapse'
 import { useSelector } from 'react-redux'
 
-import { CollectionTitle } from 'src/app/collection/title'
-import { Item } from 'src/app/item'
+import { Collection } from 'src/app/collection/index'
 
-export const InnerCollection = ({ value }) => {
+export const InnerCollection = ({ parent }) => {
   const innerCollection = useSelector(root => root.collection.inner.toJS())
+  const isVisible = innerCollection.parentTitle === parent.title && innerCollection.value.entityBundle === 'collection'
 
-  return <Collapse in={innerCollection.title === value.title}>
-    <GridList cellHeight={20} style={{ overflow: 'hidden' }}>
-      <GridListTile cols={3} style={{ height: 'auto' }}>
-        <CollectionTitle value={innerCollection?.value ?? {}}/>
-      </GridListTile>
+  if (innerCollection?.value?.entityBundle !== 'collection') {
+    return null
+  }
 
-      {
-        innerCollection?.value?.queryFieldReferences?.entities
-          ?.map((reference, index) => <Item key={index} value={reference}/>)
-      }
-    </GridList>
+  return <Collapse in={isVisible}>
+    <Collection value={innerCollection.value}/>
   </Collapse>
 }

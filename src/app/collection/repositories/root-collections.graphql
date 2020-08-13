@@ -42,16 +42,25 @@ fragment commonCollectionFields on NodeCollection {
     title
     fieldShortDescription
     fieldDescription
+    fieldImage {
+        url
+    }
 }
 
 fragment commonEpisodeFields on NodeEpisode {
     title
     fieldShortDescription
     fieldDescription
+    fieldImage {
+        url
+    }
 }
 
 fragment commonMovieFields on NodeMovie {
     title
     fieldShortDescription
     fieldDescription
+    fieldImage {
+        url
+    }
 }
