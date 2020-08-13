@@ -18,8 +18,10 @@ export const Item = ({ value, onClick }) => {
 
   return <Box p={1} className={classes.root}>
     <GridListTile>
+
       <img src={'https://material-ui.com/static/images/grid-list/camera.jpg'} alt={'Image...'} width={303}
            onClick={onClick}/>
+
       <GridListTileBar title={value.title} subtitle={value.fieldShortDescription}/>
     </GridListTile>
   </Box>
