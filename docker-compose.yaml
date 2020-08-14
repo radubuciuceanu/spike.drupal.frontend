@@ -1,0 +1,10 @@
+version: "3.6"
+
+services:
+  frontend-instance:
+    image: frontend-instance:latest
+    build:
+      context: .
+      dockerfile: frontend.dockerfile
+    container_name: frontend-instance
+    network_mode: host
